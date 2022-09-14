@@ -11,6 +11,8 @@
 <style>
   body{
     /* background-color: rgb(129, 26, 129); */
+    background-image: url(pink-5.jpg);
+    object-fit: contain;
 
     position: absolute;
     left: 0;
@@ -18,8 +20,6 @@
     width: 100%;
     height: 100vh;
     /* animation: animate 16s infinite; */
-    object-fit: contain;
-    background-image: url(pink-5.jpg);
   }
 
   /* @keyframes animate {
