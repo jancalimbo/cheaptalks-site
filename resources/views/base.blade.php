@@ -26,8 +26,12 @@
         @yield('content')
     </div>
 
-    <style>
-        
-    </style>
 </body>
 </html>
+
+<style>
+    body{
+        /* background-color: #F1FFE7; */
+        background-color: #6290C3;
+    }
+</style>

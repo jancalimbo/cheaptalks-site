@@ -42,7 +42,7 @@
      .btn {
         /* margin-left: 40%;
         margin-right: 40%; */
-        background-color: rgb(236, 179, 236);
+        /* background-color: rgb(236, 179, 236); */
     }
 
     #top{
@@ -53,17 +53,10 @@
         font-weight: bold;
         font-size: 50px;
     }
-    body{
-        background-color: rgb(251, 234, 251);
-        /* background-color: rgb(129, 26, 129); */
-    }
-
-    .card-footer {
-        height: 50px;
-    }
 
     #buttons-in-post{
         margin-right: 5px;
+        /* color: #F1FFE7; */
     }
     /* #your-btn{
         background-color: rgb(140, 50, 140);
@@ -84,11 +77,21 @@
     }
 
     #pen {
-        color: rgb(140, 50, 140);
+        color: #6290C3s;
+    }
+
+    .card-body{
+        background-color: #F1FFE7;
+        color: #1A1B41;
+    }
+    
+    .card-footer{
+        background-color: #C2E7DA;
+        height: 50px;
     }
 
     .buttons-for-non-user{
-        color: black;
+        color: #1A1B41;
     }
 
         ::-webkit-scrollbar {

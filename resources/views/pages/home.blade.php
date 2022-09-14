@@ -11,7 +11,7 @@
 <style>
   body{
     /* background-color: rgb(129, 26, 129); */
-    background-image: url(pink-5.jpg);
+    /* background-image: url(pink-5.jpg); */
     object-fit: contain;
 
     position: absolute;
@@ -44,6 +44,6 @@
     0%{
       background-image: url(pink-6.jpg);
     } */
-  } */
+  /* } */ */
 </style>
 @endsection

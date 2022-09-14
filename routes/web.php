@@ -16,19 +16,27 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function() {
+Route::get('/home', function() {
     if(auth()->guest()) {
         return redirect('/login');
     }
-
     return view('pages.home');
 });
 
-Route::get('/login',[AuthController::class, 'loginForm'])->name('login');
+//cher angel routes
+Route::get('/',[AuthController::class, 'loginForm'])->name('login'); 
+Route::post('/',[AuthController::class, 'login']); 
+Route::get('/register',[AuthController::class, 'registerForm']);
+Route::post('/register',[AuthController::class, 'register']);
+Route::get('/verification/{user}/{token}', [AuthController::class, 'verification']);
 Route::post('/login',[AuthController::class,'login']);
+Route::get('/logout',[AuthController::class,'logout']);
 
+Route::get('/dashboard', function(){
+    return view('dashboard');
+})->middleware('auth');
 
-Route::get('/dashboard',[AuthController::class,'dashboard']);
+//additional routes)
 
 Route::group(['middleware'=>'auth'],function(){
     Route::get('/post/create',[PostController::class,'create']);
@@ -38,7 +46,6 @@ Route::group(['middleware'=>'auth'],function(){
 
     Route::get('/posts/{post}',[PostController::class,'show']);
 
-    Route::get('/logout',[AuthController::class,'logout']);
 
     Route::get('/posts/edit/{post}',[PostController::class,'edit'])->middleware('can-edit');
     Route::put('/posts/{post}',[PostController::class,'update'])->middleware('can-edit');

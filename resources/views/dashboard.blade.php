@@ -10,7 +10,7 @@
 
 <style>
   body{
-    background-color: rgb(251, 234, 251);
+    background-color: #FFEAAE;
   }
 </style>
 @endsection
