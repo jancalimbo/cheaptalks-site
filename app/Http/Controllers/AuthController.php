@@ -87,6 +87,7 @@ class AuthController extends Controller
             return back()->with('error','Invalid user credentials.');
         }
         return redirect('/dashboard');
+        
     }
 
     public function logout()
@@ -96,4 +97,9 @@ class AuthController extends Controller
         return redirect('/')->with('message', 'Logged out successfully.');
     }
 
+    //added functions
+    // if(auth()->guest()){
+    //     return redirect('/')->with('error', 'Please log in first.');
+    // }
+    
 }

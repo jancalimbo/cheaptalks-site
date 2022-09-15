@@ -9,6 +9,10 @@ class Post extends Model
 {
     use HasFactory;
 
+    //cher angel codes
+
+    protected $guarded = [];
+
     protected $fillable = ['user_id', 'title','content'];
 
 

@@ -13,7 +13,7 @@
                     <a id="navbar-links" class="nav-link" href="{{url('/posts/recent-posts')}}">News Feed</a>
                 </li>
                 <li class="nav-item">
-                    <a id="navbar-links" class="nav-link" href="{{url('/posts/my-posts')}}">Your Profile</a>
+                <a id="navbar-links" class="nav-link" href="{{url('/posts/my-posts')}}">Your Profile</a>
                 </li>
                 @if(auth()->guest())
                 {{-- <li class="nav-item">

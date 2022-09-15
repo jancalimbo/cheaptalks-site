@@ -5,10 +5,10 @@
 
     {{-- not working yet --}}
     @if(session('message'))
-        <div class="container col-md-6 offset-md-3 mt-5 alert alert-success text-center">{{ session('message') }}</div>
+      <div class="container col-md-6 offset-md-3 mt-5 alert alert-success text-center">{{ session('message') }}</div>
     @endif
     @if(session('error'))
-        <div class="container col-md-6 offset-md-3 mt-5 alert alert-danger text-center">{{ session('error') }}</div>
+      <div class="container col-md-6 offset-md-3 mt-5 alert alert-danger text-center">{{ session('error') }}</div>
     @endif
     {{-- not working snippet ends here --}}
  
@@ -62,6 +62,10 @@
 
 .btn{
     /* background-color: #1A1B41; */
+}
+
+input{
+
 }
 </style>
 
