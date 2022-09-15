@@ -10,7 +10,8 @@ class Index extends Component
     
     //cher angel codes
     public function showPosts(){
-        $posts = Post::orderBy('created_at','DESC')->get();
+        $posts = Post::where('user_id',auth()->user()->id)
+        ->orderBy('created_at','DESC')->get();
         
         return compact('posts');
     }
