@@ -13,7 +13,9 @@
                 </div>
             </div>
             <div class="card-footer">
-                <a href="{{ url('/posts/edit/' . $post->id) }}" ><i id="pen" class="fa-solid fa-user-pen"></i></a>
+                {{-- <a href="{{ url('/posts/edit/' . $post->id) }}" ><i id="pen" class="fa-solid fa-user-pen"></i></a> --}}
+                <a href="{{ url('edit', ['post' => $post->id]) }}" class="btn btn-primary">Edit</a>
+                <a href="{{ url('delete', ['post' => $post->id]) }}" class="btn btn-danger">Delete</a>
             </div>
         </div>
         @endforeach

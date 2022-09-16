@@ -1,13 +1,15 @@
 @extends('base')
+
 @section('content')
 @livewireScripts
 
 
     <div id="top" class="float-end m-2">
-        <a href="{{url('/post/create')}}" class="btn">New Post</a>
+        <a class="btn btn-primary" data-toggle="collapse" href="#createPost" role="button" aria-expanded="false" aria-controls="createPost">New Post</a>
+        
     </div>
 
-    <h1 id="top-title">Welcome, user!</h1>
+    <h1 id="top-title">Hey, user!</h1>
 
     <br>
 
@@ -20,7 +22,7 @@
 
     <div class="container m-5">
         <div class="row">
-            <div class="col m-5">
+            <div id="" class=" col m-5">
                 <livewire:posts.create/>
             </div>
             <div class="col sm-8">
@@ -40,7 +42,7 @@
         .btn {
         /* margin-left: 40%;
         margin-right: 40%; */
-        background-color: rgb(236, 179, 236);
+        /* background-color: rgb(236, 179, 236); */
     }
 
     #top{

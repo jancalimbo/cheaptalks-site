@@ -1,10 +1,9 @@
 @extends('base')
 @section('content')
 
-    <div class="row mt-3">
+    {{-- <div class="row mt-3">
         <div class="col-md-6">
             <h1 id="top">Edit Post</h1>
-            {{-- <hr> --}}
 
             {!! Form::model($post,['url'=>'/posts/' . $post->id,'method'=>'PUT']) !!}
                 <div class="mb-3">
@@ -35,8 +34,6 @@
     }
 
     .btn {
-        /* margin-left: 40%;
-        margin-right: 40%; */
         background-color: rgb(236, 179, 236);
     }
 
@@ -51,5 +48,7 @@
         margin-top: 30px;
         margin-left: 24vw;
     }
-    </style>
+    </style> --}}
+    <livewire:posts.edit :postId="$id"/>
+    
 @endsection

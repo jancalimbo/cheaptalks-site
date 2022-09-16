@@ -20,10 +20,10 @@ Route::get('/home', function() {
     if(auth()->guest()) {
         return redirect('/login');
     }
-    return view('pages.home');
+    return view('authentication.home');
 });
 
-//cher angel routes
+//Auth routes
 Route::get('/',[AuthController::class, 'loginForm'])->name('login'); 
 Route::post('/',[AuthController::class, 'login']); 
 Route::get('/register',[AuthController::class, 'registerForm']);
@@ -36,13 +36,20 @@ Route::get('/dashboard', function(){
     return view('dashboard');
 })->middleware('auth');
 
-//additional routes)
+//crud video routes
+Route::get('/posts/my-posts', [PostController::class,'index']);
+Route::get('/edit/{post}', [PostController::class, 'edit']);
+Route::get('/delete/{post}', [PostController::class, 'destroy']);
+Route::get('/posts/recent-posts',[PostController::class,'recentPosts']);
+
+
+
+//additional routes
 
 Route::group(['middleware'=>'auth'],function(){
     Route::get('/post/create',[PostController::class,'create']);
     Route::post('/posts',[PostController::class,'store']);
     Route::get('/posts/my-posts',[PostController::class,'myPosts']);
-    Route::get('/posts/recent-posts',[PostController::class,'recentPosts']);
 
     Route::get('/posts/{post}',[PostController::class,'show']);
 

@@ -26,7 +26,6 @@ class Post extends Model
     }
     public function isEditable()
     {
-
      return auth()->user()->role == 'editor' || auth()->user()->id == $this->user_id;
     }
 }

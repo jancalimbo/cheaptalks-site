@@ -10,9 +10,6 @@
                     <a id="navbar-links" class="nav-link" href="{{url('/dashboard')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a id="navbar-links" class="nav-link" href="{{url('/posts/recent-posts')}}">News Feed</a>
-                </li>
-                <li class="nav-item">
                 <a id="navbar-links" class="nav-link" href="{{url('/posts/my-posts')}}">Your Profile</a>
                 </li>
                 @if(auth()->guest())
@@ -20,6 +17,9 @@
                     <a id="navbar-links" class="nav-link" href="{{url('/login')}}">Login</a>
                 </li> --}}
                 @else
+                <li class="nav-item">
+                    <a id="navbar-links" class="nav-link" href="{{url('/posts/recent-posts')}}">News Feed</a>
+                </li>
                 <li class="nav-item">
                     <a id="navbar-links" class="nav-link" href="{{url('/logout')}}">Logout &nbsp; <i class="fa-solid fa-right-to-bracket"></i></a>
                 </li>

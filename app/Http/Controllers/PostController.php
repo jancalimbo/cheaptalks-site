@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
 
+    //cher angel
+
+
     public function myPosts()
     {
         $myPost = Post::where('user_id',auth()->user()->id)
@@ -38,17 +41,35 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id)->with('Info','New post created');
     }
 
+
+    //crud video
+    
+    public function index(){
+        return view('posts.my-posts');
+    }
+
+    public function edit($id)
+    {
+        // return view('posts.edit',['post'=>$post]);
+        return view('posts.edit',compact('id'));
+    }
+
+    public function destroy($id){
+        return view('posts.delete',compact('id'));
+    }
+
+
+
+
+    //end of crud video
+
     public function show(Post $post)
     {
         return view('posts.view',['post'=>$post]);
     }
 
 
-    public function edit(Post $post)
-    {
-        return view('posts.edit',['post'=>$post]);
-    }
-
+  
 
     public function update(Post $post,Request $request)
     {

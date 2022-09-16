@@ -16,14 +16,14 @@ class AuthController extends Controller
         if(auth()->check()){
             return redirect('/dashboard');
         }
-        return view('pages.login');
+        return view('authentication.login');
     }
 
     public function registerForm() {
         if(auth()->check()){
             return redirect('/dashboard');
         }
-        return view('pages.register');
+        return view('authentication.register');
     }
 
     public function register(Request $request){
@@ -46,7 +46,7 @@ class AuthController extends Controller
             'remember_token' => $token,
         ]);
 
-        Mail::send('pages.verification-mail', ['user' => $user], function ($mail) use($user){
+        Mail::send('authentication.verification-mail', ['user' => $user], function ($mail) use($user){
             $mail->to($user->email);
             $mail->subject('Account Verification');
         });

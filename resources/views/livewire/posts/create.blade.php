@@ -1,6 +1,6 @@
 <div>
     {{-- The whole world belongs to you. --}}
-    <div class="card">
+    <div id="" class=" card">
         <div class="card-header">
             <h3>Create Post</h3>
         </div>
