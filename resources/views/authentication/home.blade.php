@@ -9,6 +9,14 @@
 </h5>
 
 <style>
-  
+  body{
+    object-fit: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
 </style>
 @endsection

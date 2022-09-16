@@ -9,6 +9,10 @@ class Post extends Model
 {
     use HasFactory;
 
+    //cher angel codes
+
+    protected $guarded = [];
+
     protected $fillable = ['user_id', 'title','content'];
 
 
@@ -22,7 +26,6 @@ class Post extends Model
     }
     public function isEditable()
     {
-
      return auth()->user()->role == 'editor' || auth()->user()->id == $this->user_id;
     }
 }

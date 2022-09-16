@@ -1,33 +1,39 @@
-
-
 @extends('base')
+
 @section('content')
+@livewireScripts
+
 
     <div id="top" class="float-end m-2">
-        <a href="{{ url('/post/create') }}" class="btn">New Post</a>
-    </div>
-
-    <h1 id="top-title">Welcome, user!</h1>
-    
-    <br>
-    <div class="d-flex justify-content-between flex-wrap">
+        <a class="btn btn-primary" data-toggle="collapse" href="#createPost" role="button" aria-expanded="false" aria-controls="createPost">New Post</a>
         
-        @foreach ($myPosts as $post)
-            <div class="card align-self-stretch m-1" style="width: 31%">
-                <div class="card-body">
-                    <div class="card-title">
-                        <h4>{{ $post->title }}</h4>
-                        <p id="timestamp">{{ $post->created_at->format('F d, Y g:i A') }}</p> <br>
-                        <p>{{ $post->content }}</p>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <a href="{{ url('/posts/edit/' . $post->id) }}" ><i id="pen" class="fa-solid fa-user-pen"></i></a>
-                </div>
-            </div>
-        @endforeach
-
     </div>
+
+    <h1 id="top-title">Hey, user!</h1>
+
+    <br>
+
+    @if(session('message'))
+        <div class="container col-md-6 offset-md-3 mt-5 alert alert-success text-center">{{ session('message') }}</div>
+    @endif
+    @if(session('error'))
+        <div class="container col-md-6 offset-md-3 mt-5 alert alert-danger text-center">{{ session('error') }}</div>
+    @endif
+
+    <div class="container m-5">
+        <div class="row">
+            <div id="" class=" col m-5">
+                <livewire:posts.create/>
+            </div>
+            <div class="col sm-8">
+                <livewire:posts.index/>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        
+    </script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
@@ -36,7 +42,7 @@
         .btn {
         /* margin-left: 40%;
         margin-right: 40%; */
-        background-color: rgb(236, 179, 236);
+        /* background-color: rgb(236, 179, 236); */
     }
 
     #top{
