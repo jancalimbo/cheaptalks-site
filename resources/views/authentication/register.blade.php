@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container col-md-6 offset-md-3 card mt-5">
+<div id="register-box" class="container col-md-6 offset-md-3 card mt-5">
   <h1 class="text-center">Register </h1>
 
   <form action="{{ '/register' }}" method="POST">
@@ -54,9 +54,9 @@
   </div>
   <div class="d-flex">
     <div class="flex-grow-1">
-      <a href="{{ '/' }}" class="href">Already have an account?</a>
+      <a id="sign-in-link" href="{{ '/' }}" class="href">Already have an account?</a>
     </div>
-    <button class="btn btn-primary px-5" type="submit">Register</button>
+    <button class="btn btn-primary px-5" type="submit">Sign up</button>
   </div>
   </form>
 </div>
@@ -71,6 +71,19 @@
   .container{
     margin-bottom: 30px;
   }
+
+  #register-box{
+    background-color: #1A1B41;
+    color: white;
+  }
+
+  #sign-in-link{
+  color: #BAFF29;
+}
+
+.btn{
+  background-color: #353894;
+}
 
 </style>
 

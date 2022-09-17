@@ -3,13 +3,13 @@
 @section('content')
 @livewireScripts
 
-
+{{-- 
     <div id="top" class="float-end m-2">
         <a class="btn btn-primary" data-toggle="collapse" href="#createPost" role="button" aria-expanded="false" aria-controls="createPost">New Post</a>
         
-    </div>
+    </div> --}}
 
-    <h1 id="top-title">Hey, user!</h1>
+    <h1 id="top-title">Welcome, user!</h1>
 
     <br>
 
@@ -20,12 +20,12 @@
         <div class="container col-md-6 offset-md-3 mt-5 alert alert-danger text-center">{{ session('error') }}</div>
     @endif
 
-    <div class="container m-5">
+    <div class="container">
         <div class="row">
-            <div id="" class=" col m-5">
+            <div id="" class=" col m-1">
                 <livewire:posts.create/>
             </div>
-            <div class="col sm-8">
+            <div class="col m-1">
                 <livewire:posts.index/>
             </div>
         </div>

@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between flex-wrap">
         
         @foreach ($posts as $post)
-        <div class="card align-self-stretch m-1" style="width: 31%">
+        <div id="post-box" class="card align-self-stretch m-1" style="width: 31%">
             <div class="card-body">
                 <div class="card-title">
                     <h4>{{ $post->title }}</h4>
@@ -14,11 +14,31 @@
             </div>
             <div class="card-footer">
                 {{-- <a href="{{ url('/posts/edit/' . $post->id) }}" ><i id="pen" class="fa-solid fa-user-pen"></i></a> --}}
-                <a href="{{ url('edit', ['post' => $post->id]) }}" class="btn btn-primary">Edit</a>
-                <a href="{{ url('delete', ['post' => $post->id]) }}" class="btn btn-danger">Delete</a>
+                <a href="{{ url('edit', ['post' => $post->id]) }}"><i class="fa-regular fa-pen-to-square"></i></a>
+                <a href="{{ url('delete', ['post' => $post->id]) }}" ><i class="fa-solid fa-trash"></i></a>
             </div>
         </div>
         @endforeach
     </div>
 
+
+    <style>
+        #post-box{
+            background-color: #202382;
+            color: white;
+        }
+
+        .card-footer{
+            background-color: #1A1B41;
+            color: white;
+        }
+        a{
+            color: #BAFF29;
+            margin-right: 8px;
+        }
+    
+    
+    </style>
 </div>
+
+

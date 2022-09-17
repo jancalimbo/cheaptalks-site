@@ -37,7 +37,7 @@
     </div>
     <div class="d-flex">
       <div class="flex-grow-1">
-        <a href="{{ '/register' }}" class="href">Don't have an account?</a>
+        <a id="register-link" href="{{ '/register' }}" class="href">Don't have an account?</a>
       </div>
       <button class="btn btn-primary px-5" type="submit">Log In <i class="fa-solid fa-right-to-bracket"></i></button>
     </div>
@@ -49,7 +49,9 @@
 <style>
 
     #login-box{
-        background-color: #C2E7DA;
+        background-color: #1A1B41;
+        color: white;
+        /* margin-top: 80px; */
     }
 
 .d-flex{
@@ -61,9 +63,17 @@
 }
 
 .btn{
-    /* background-color: #1A1B41; */
+    background-color: #353894;
+    
 }
 
+.container{
+  margin-top: 100px;
+}
+
+#register-link{
+  color: #BAFF29;
+}
 input{
 
 }

@@ -15,7 +15,6 @@ class PostController extends Controller
     {
         $myPost = Post::where('user_id',auth()->user()->id)
         ->orderBy('created_at','DESC')
-        ->limit(20)
         ->get();
         return view('posts.my-posts',['myPosts'=>$myPost]);
     }
@@ -85,7 +84,7 @@ class PostController extends Controller
     }
     public function recentPosts()
     {
-        $recentPost = Post::orderBy('created_at','DESC')->limit(50)->get();
+        $recentPost = Post::orderBy('created_at','DESC')->get();
 
         return view('posts.recent',['recentPost' => $recentPost]);
     }

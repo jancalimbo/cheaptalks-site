@@ -16,13 +16,6 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/home', function() {
-    if(auth()->guest()) {
-        return redirect('/login');
-    }
-    return view('authentication.home');
-});
-
 //Auth routes
 Route::get('/',[AuthController::class, 'loginForm'])->name('login'); 
 Route::post('/',[AuthController::class, 'login']); 
@@ -46,16 +39,16 @@ Route::get('/posts/recent-posts',[PostController::class,'recentPosts']);
 
 //additional routes
 
-Route::group(['middleware'=>'auth'],function(){
-    Route::get('/post/create',[PostController::class,'create']);
-    Route::post('/posts',[PostController::class,'store']);
-    Route::get('/posts/my-posts',[PostController::class,'myPosts']);
+// Route::group(['middleware'=>'auth'],function(){
+//     Route::get('/post/create',[PostController::class,'create']);
+//     Route::post('/posts',[PostController::class,'store']);
+//     Route::get('/posts/my-posts',[PostController::class,'myPosts']);
 
-    Route::get('/posts/{post}',[PostController::class,'show']);
-
-
-    Route::get('/posts/edit/{post}',[PostController::class,'edit'])->middleware('can-edit');
-    Route::put('/posts/{post}',[PostController::class,'update'])->middleware('can-edit');
+//     Route::get('/posts/{post}',[PostController::class,'show']);
 
 
-});
+//     Route::get('/posts/edit/{post}',[PostController::class,'edit'])->middleware('can-edit');
+//     Route::put('/posts/{post}',[PostController::class,'update'])->middleware('can-edit');
+
+
+// });

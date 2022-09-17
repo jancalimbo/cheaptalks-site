@@ -1,8 +1,8 @@
 <div>
     {{-- The whole world belongs to you. --}}
-    <div id="" class=" card">
+    <div id="create-post-box" class="card">
         <div class="card-header">
-            <h3>Create Post</h3>
+            <h3 class="text-center">Create Post</h3>
         </div>
         <div class="card-body">
             <div class="form-floating mb-3">
@@ -20,8 +20,33 @@
                 @enderror
             </div>
             <div class="form-group mb-3 d-grid gap-2 d-md-flex justify-content-end">
-                <button class="btn btn-primary" type="submit" wire:click="createPost()">Post</button>
+                <button class="btn" type="submit" wire:click="createPost()">Post</button>
             </div>
         </div>
     </div>
+    <style>
+        #create-post-box{
+            background-color: #202382;
+            color: #1A1B41;
+        }
+
+        .card-header{
+            background-color: #1A1B41;
+            color: #BAFF29;
+        }
+        a{
+            color: #BAFF29;
+            margin-right: 8px;
+        }
+
+        .btn{
+            background-color: #1A1B41;
+            color: #BAFF29;
+        }
+
+        .card{
+            width: 500px;
+        }
+    
+    </style>
 </div>
