@@ -75,7 +75,7 @@ class AuthController extends Controller
         $user = User::where('username', $request->username)->first();
 
         if(!$user || $user->email_verified_at == null){
-            return redirect('/')->with('error', 'Sorry your account is not yet verified or does not exist.');
+            return redirect('/')->with('error', 'Sorry, this account is not yet verified or does not exist.');
         }
         
         $login = auth()->attempt([

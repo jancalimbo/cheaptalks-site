@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,10 +31,15 @@ Route::get('/dashboard', function(){
 })->middleware('auth');
 
 //crud video routes
-Route::get('/posts/my-posts', [PostController::class,'index']);
-Route::get('/edit/{post}', [PostController::class, 'edit']);
-Route::get('/delete/{post}', [PostController::class, 'destroy']);
-Route::get('/posts/recent-posts',[PostController::class,'recentPosts']);
+Route::group(['middleware'=> ['auth', 'verified']],function(){
+    Route::get('/posts/my-posts', [PostController::class,'index']);
+    Route::get('/edit/{post}', [PostController::class, 'edit']);
+    Route::get('/delete/{post}', [PostController::class, 'destroy']);
+    Route::get('/posts/recent-posts',[PostController::class,'recentPosts']);
+    //routes for logs
+    Route::get('/logs',[SiteController::class, 'logs']);
+});
+
 
 
 

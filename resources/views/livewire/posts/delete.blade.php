@@ -4,10 +4,10 @@
     <div class="container col-md-6 offset-md-3 mt-3">
         <div class="card">
             <div class="card-header">
-                <h3 class="text-danger">Are you sure you want to delete this post?</h3>
+                <h3 class="text-center">Are you sure you want to delete this post?</h3>
             </div>
 
-            <div class="card-body">
+            {{-- <div class="card-body">
                 <table class="table">
                     <tr>
                         <th>
@@ -26,7 +26,7 @@
                         </td>
                     </tr>
                 </table>
-            </div>
+            </div> --}}
 
             <div class="card-footer">
                 <div class="d-flex justify-content-end">
@@ -36,4 +36,16 @@
             </div>
         </div>
     </div>
+
+    <style>
+        .card{
+            border: 3px solid #1A1B41; 
+            background-color: #1a1b41b6;
+            margin-top: 20vh; 
+        }
+
+        h3{
+            color: #BAFF29;
+        }
+    </style>
 </div>

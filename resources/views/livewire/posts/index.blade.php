@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between flex-wrap">
         
         @foreach ($posts as $post)
-        <div id="post-box" class="card align-self-stretch m-1" style="width: 31%">
+        <div id="post-box" class="card align-self-stretch m-1" style="width: 49%">
             <div class="card-body">
                 <div class="card-title">
                     <h4>{{ $post->title }}</h4>

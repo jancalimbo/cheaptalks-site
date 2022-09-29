@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Posts;
 
 use Livewire\Component;
 use App\Models\Post;
+use App\Events\UserLog;
 
 
 class Edit extends Component
@@ -27,6 +28,9 @@ class Edit extends Component
             'title' => $this->title,
             'content' => $this->content,
         ]);
+
+        $log_entry =  'Changes made to the post "' . $this->post->title . '"';
+        event(new UserLog($log_entry)); 
 
         return redirect('/posts/my-posts')->with('message', 'success');
     }

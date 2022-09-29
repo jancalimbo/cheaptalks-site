@@ -3,7 +3,7 @@
 
 
 
-<h1 id="top" >Recent Posts</h1>
+<h1 id="top">All posts</h1>
 {{-- <hr> --}}
 <div class="d-flex justify-content-between flex-wrap">
 

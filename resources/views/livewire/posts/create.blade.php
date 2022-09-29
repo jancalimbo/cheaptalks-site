@@ -13,7 +13,7 @@
                 @enderror
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" wire:model.defer="content">
+                <input id="content-input" type="text" class="form-control" wire:model.defer="content">
                 <label for="content">Content</label>
                 @error('content')
                     <p class="text-danger">{{ $message }}</p>
@@ -24,6 +24,8 @@
             </div>
         </div>
     </div>
+
+    
     <style>
         #create-post-box{
             background-color: #202382;
@@ -47,6 +49,10 @@
         .card{
             width: 500px;
         }
+
+        /* #content-input{
+            max-height: 50px;
+        } */
     
     </style>
 </div>
