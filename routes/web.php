@@ -26,6 +26,7 @@ Route::get('/verification/{user}/{token}', [AuthController::class, 'verification
 Route::post('/login',[AuthController::class,'login']);
 Route::get('/logout',[AuthController::class,'logout']);
 
+
 Route::get('/dashboard', function(){
     return view('dashboard');
 })->middleware('auth');

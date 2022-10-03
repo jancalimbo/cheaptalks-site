@@ -8,8 +8,13 @@
         <a class="btn btn-primary" data-toggle="collapse" href="#createPost" role="button" aria-expanded="false" aria-controls="createPost">New Post</a>
         
     </div> --}}
+    <div>
+        <div class="">
+            <h1 id="top-title">Welcome, user!</h1>
+        </div>
+        
+    </div>
 
-    <h1 id="top-title">Welcome, user!</h1>
     <br>
 
    

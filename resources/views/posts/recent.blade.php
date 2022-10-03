@@ -2,10 +2,13 @@
 @section('content')
 
 
-
 <h1 id="top">All posts</h1>
-{{-- <hr> --}}
+<hr>
+<div class="col">
+    <input type="text" class="form-control" placeholder="Search" wire:model="search">
+</div>
 <div class="d-flex justify-content-between flex-wrap">
+   
 
     @foreach ($recentPost as $post)
         <div id="post-box" class="card align-self-stretch m-1" style="width: 31%">

@@ -13,6 +13,20 @@ class Post extends Model
 
     protected $guarded = [];
 
+    public function scopeSearch($query, $terms){
+        collect(explode(" ", $terms))
+            ->filter()
+            ->each(function($term) use ($query){
+            $term = '%' . $term . '%';
+
+            $query->where('title', 'like', $term)
+                ->orWhere('content', 'like', $term);
+        });
+
+    }
+
+
+
     protected $fillable = ['user_id', 'title','content'];
 
 

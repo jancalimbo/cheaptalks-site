@@ -12,6 +12,7 @@
                     <a id="navbar-links" class="nav-link" href="{{url('/login')}}">Login</a>
                 </li> --}}
                 @else
+                    
                 <li class="nav-item">
                     <a id="navbar-links" class="nav-link" href="{{url('/dashboard')}}">Home</a>
                 </li>

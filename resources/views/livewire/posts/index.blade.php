@@ -1,6 +1,8 @@
 <div>
     {{-- In work, do what you enjoy. --}}
-
+    <div class="col">
+        <input type="text" class="form-control" placeholder="Search" wire:model="search">
+     </div>
     <div class="d-flex justify-content-between flex-wrap">
         
         @foreach ($posts as $post)

@@ -7,12 +7,13 @@ use App\Models\Post;
 
 class Index extends Component
 {
-    
+    public $search;
     //cher angel codes
     public function showPosts(){
         $posts = Post::where('user_id',auth()->user()->id)
+        ->search($this->search)
         ->orderBy('created_at','DESC')->get();
-        
+
         return compact('posts');
     }
     public function render()
