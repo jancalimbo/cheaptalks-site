@@ -20,12 +20,10 @@ class Post extends Model
             $term = '%' . $term . '%';
 
             $query->where('title', 'like', $term)
-                ->orWhere('content', 'like', $term);
+            ->orWhere('content', 'like', $term);
         });
 
     }
-
-
 
     protected $fillable = ['user_id', 'title','content'];
 

@@ -1,13 +1,13 @@
 <div>
-    {{-- In work, do what you enjoy. --}}
     <div class="col">
-        <input type="text" class="form-control" placeholder="Search" wire:model="search">
-     </div>
+        <input type="text" class="form-control" placeholder="Search" wire:model="search">   
+    </div>
+    <hr>
     <div class="d-flex justify-content-between flex-wrap">
         
         @foreach ($posts as $post)
-        <div id="post-box" class="card align-self-stretch m-1" style="width: 49%">
-            <div class="card-body">
+        <div class="card align-self-stretch m-1" style="width: 49%">
+            <div class="card-body" id="post-box">
                 <div class="card-title">
                     <h4>{{ $post->title }}</h4>
                     <p id="timestamp">{{ $post->created_at->format('F d, Y g:i A') }}</p> <br>
@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="card-footer">
-                {{-- <a href="{{ url('/posts/edit/' . $post->id) }}" ><i id="pen" class="fa-solid fa-user-pen"></i></a> --}}
+             
                 <a href="{{ url('edit', ['post' => $post->id]) }}"><i class="fa-regular fa-pen-to-square"></i></a>
                 <a href="{{ url('delete', ['post' => $post->id]) }}" ><i class="fa-solid fa-trash"></i></a>
             </div>

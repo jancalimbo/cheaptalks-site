@@ -8,14 +8,17 @@ use App\Models\Post;
 class Index extends Component
 {
     public $search;
+    
     //cher angel codes
     public function showPosts(){
-        $posts = Post::where('user_id',auth()->user()->id)
+        $posts = Post::where('user_id', auth()->user()->id)
+        ->orderBy('created_at','DESC')
         ->search($this->search)
-        ->orderBy('created_at','DESC')->get();
+        ->get();
 
         return compact('posts');
     }
+    
     public function render()
     {
         return view('livewire.posts.index', $this->showPosts());

@@ -3,20 +3,6 @@
 @section('content')
 @livewireScripts
 
-{{-- 
-    <div id="top" class="float-end m-2">
-        <a class="btn btn-primary" data-toggle="collapse" href="#createPost" role="button" aria-expanded="false" aria-controls="createPost">New Post</a>
-        
-    </div> --}}
-    <div>
-        <div class="">
-            <h1 id="top-title">Welcome, user!</h1>
-        </div>
-        
-    </div>
-
-    <br>
-
    
 
     <div class="container">
@@ -48,16 +34,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
 
         .btn {
-        /* margin-left: 40%;
-        margin-right: 40%; */
-        /* background-color: rgb(236, 179, 236); */
+       
     }
 
     #top{
         margin-top: 30px;
-        /* font-family: 'Lavishly Yours', cursive;
-        font-weight: bold;
-        font-size: 50px; */
     }
     #top-title{
         margin-top: 30px;

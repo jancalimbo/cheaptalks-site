@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,22 +41,3 @@ Route::group(['middleware'=> ['auth', 'verified']],function(){
     //routes for logs
     Route::get('/logs',[SiteController::class, 'logs']);
 });
-
-
-
-
-//additional routes
-
-// Route::group(['middleware'=>'auth'],function(){
-//     Route::get('/post/create',[PostController::class,'create']);
-//     Route::post('/posts',[PostController::class,'store']);
-//     Route::get('/posts/my-posts',[PostController::class,'myPosts']);
-
-//     Route::get('/posts/{post}',[PostController::class,'show']);
-
-
-//     Route::get('/posts/edit/{post}',[PostController::class,'edit'])->middleware('can-edit');
-//     Route::put('/posts/{post}',[PostController::class,'update'])->middleware('can-edit');
-
-
-// });

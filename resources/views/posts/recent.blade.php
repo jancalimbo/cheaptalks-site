@@ -1,14 +1,14 @@
 @extends('base')
 @section('content')
 
-
-<h1 id="top">All posts</h1>
-<hr>
-<div class="col">
-    <input type="text" class="form-control" placeholder="Search" wire:model="search">
+<div class="d-flex">
+    <div>
+        <h1 id="top">All posts</h1>
+    </div>
+  
 </div>
+<hr>
 <div class="d-flex justify-content-between flex-wrap">
-   
 
     @foreach ($recentPost as $post)
         <div id="post-box" class="card align-self-stretch m-1" style="width: 31%">
@@ -27,10 +27,7 @@
                     @else 
                     <a class="buttons-for-non-user" href="" onclick="return false;"><i class="fa-regular fa-heart"></i></a>&nbsp;
                     <a class="buttons-for-non-user" href="" onclick="return false;"><i class="fa-regular fa-comment-dots"></i></i></a>&nbsp;
-                    <a class="buttons-for-non-user" href="" onclick="return false;"><i class="fa-solid fa-share-nodes"></i></a>
-                     
-                     
-                    
+                    <a class="buttons-for-non-user" href="" onclick="return false;"><i class="fa-solid fa-share-nodes"></i></a>                    
                 @endif
             </div>
         </div>
