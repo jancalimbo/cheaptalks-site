@@ -2,7 +2,7 @@
     {{-- The whole world belongs to you. --}}
     <div id="create-post-box" class="card">
         <div class="card-header">
-            <h3 class="text-center">Create Post</h3>
+            <h3 class="text-center">What's on your mind?</h3>
         </div>
         <div class="card-body">
             <div class="form-floating mb-3">
@@ -11,6 +11,21 @@
                 @error('title')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
+            </div>
+            <div class="form-floating mb-3">
+              <select name="category" class="form-select" id="" wire:model.defer="category">
+                <option value="" hidden="true">Select Category</option>
+                <option value="" selected disabled>Select Category</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Supernatural">Supernatural</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Slice Life">Slice of Life</option>
+              </select>
+              <label for="category">Category</label>
+              @error('category')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
+
             </div>
             <div class="form-floating mb-3">
                 <input id="content-input" type="text" class="form-control" wire:model.defer="content">

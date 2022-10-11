@@ -10,7 +10,7 @@ use App\Listeners\LogListener;
 
 class Create extends Component
 {
-    public $user, $title, $content, $log;
+    public $user, $title, $content, $log, $category;
 
     //return the view file
     public function render()
@@ -22,13 +22,15 @@ class Create extends Component
     public function createPost(){
         $this->validate([
             'title' => ['required', 'string', 'max:255'],
-            'content' => ['required', 'string', 'max:255']
+            'content' => ['required', 'string', 'max:255'],
+            'category' => ['required', 'string', 'max:255']
         ]);
 
         $post = Post::create([
             'user_id' => auth()->user()->id,
             'title' => $this->title,
             'content' => $this->content,
+            'category' => $this->category,
         ]);
 
         $log_entry =  'Added a new post titled "' . $post->title . '"';

@@ -5,11 +5,15 @@
 
    
 
-    <div class="container">
+    <div class="container d-flex">
         <div class="row">
+            <button type="button" class="collapsible">Create Post</button>
+        <div class="content">
             <div id="" class="col sm-1 mb-4">
                 <livewire:posts.create/>
             </div>
+        </div>
+            
             <div id="right-side" class="col sm-1 mb-4">
                 @if(session('message'))
                     <div class="container col-md-6 offset-md-3 mt-5 alert alert-success text-center">{{ session('message') }}</div>
@@ -22,6 +26,7 @@
             <div class="">
                 <livewire:posts.index/>
             </div>
+            
         </div>
     </div>
     
@@ -72,8 +77,68 @@
         margin-top: 50px;
     } */
 
+    /* css sa collapse*/
+    /* Style the button that is used to open and close the collapsible content */
+    .collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    }
+
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .collapsible:hover {
+    background-color: #ccc;
+    }
+
+    /* Style the collapsible content. Note: hidden by default */
+    .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    }
+    Step 3) Add JavaScript:
+    Example
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+        content.style.display = "none";
+        } else {
+        content.style.display = "block";
+        }
+    });
+    }
+
     ::-webkit-scrollbar {
             display: none;
         }
     </style>
+
+    <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+        content.style.display = "none";
+        } else {
+        content.style.display = "block";
+        }
+    });
+    }
+    </script>
 @endsection

@@ -1,5 +1,10 @@
 @extends('base')
 @section('content')
+@livewireScripts
+
+<div class="col">
+    <input type="text" class="form-control" placeholder="Search" wire:model="search2">   
+</div>
 
 <div class="d-flex">
     <div>

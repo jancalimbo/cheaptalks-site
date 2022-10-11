@@ -30,12 +30,14 @@ class PostController extends Controller
     {
         $request->validate([
             'title'=>'string|required',
-            'content' => 'string|required'
+            'content' => 'string|required',
+            'category' => 'string|required'
         ]);
         $post = Post::create([
             'user_id' => auth()->user()->id,
             'title'=> $request->title,
             'content'=> $request->content,
+            'category'=> $request->category,
         ]);
 
         return redirect('/posts/' . $post->id)->with('Info','New post created');

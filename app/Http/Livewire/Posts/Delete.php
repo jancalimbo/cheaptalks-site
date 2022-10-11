@@ -9,7 +9,7 @@ use App\Events\UserLog;
 class Delete extends Component
 {
     public $postId;
-    public $title, $content;
+    // public $title, $content, $category;
 
 
     public function getPostProperty(){

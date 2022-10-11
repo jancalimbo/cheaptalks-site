@@ -14,6 +14,18 @@
                     @enderror
                 </div>
                 <div class="form-floating mb-3">
+                    <select name="category" class="form-select" id="" wire:model.defer="category">
+                        
+                        <option value="Adventure">Adventure</option>
+                        <option value="Supernatural">Supernatural</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Slice Life">Slice of Life</option>
+                      </select>
+                    @error('category')
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="form-floating mb-3">
                     <input type="text" class="form-control" wire:model.defer="content">
                     <label for="content">Content</label>
                     @error('content')

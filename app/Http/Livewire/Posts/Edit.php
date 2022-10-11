@@ -10,23 +10,26 @@ use App\Events\UserLog;
 class Edit extends Component
 {
     public $postId;
-    public $title, $content;
+    public $title, $content, $category;
 
     
     public function mount(){
         $this->title = $this->post->title;
         $this->content = $this->post->content;
+        $this->category = $this->post->category;
     }
 
     public function editPost(){
         $this->validate([
             'title' => ['required', 'string', 'max:255'],
-            'content' => ['required', 'string', 'max:255']
+            'content' => ['required', 'string', 'max:255'],
+            'category' => ['required', 'string', 'max:255']
         ]);
 
         $this->post->update([
             'title' => $this->title,
             'content' => $this->content,
+            'category' => $this->category,
         ]);
 
         $log_entry =  'Changes made to the post "' . $this->post->title . '"';
