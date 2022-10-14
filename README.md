@@ -1,9 +1,8 @@
 ASSIGNMENT:
 
-Prelim Project <br>
-Create a new full CRUD Laravel 8 project with the use of the Laravel Livewire framework with the following requirements: <br>
+ <br>
+Create a new full CRUD Laravel 9 project with the use of the Laravel Livewire framework with the following requirements: <br>
 
-A nice enough landing page. <br>
 A registration page for registering new users . <br>
 After a successful registration process, the system must perform the following: <br>
     ->  Send a verification email bearing a mechanism (link) to verify the email used by the user upon registration. <br>
