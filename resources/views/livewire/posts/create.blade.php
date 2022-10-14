@@ -64,10 +64,6 @@
         .card{
             width: 500px;
         }
-
-        /* #content-input{
-            max-height: 50px;
-        } */
     
     </style>
 </div>

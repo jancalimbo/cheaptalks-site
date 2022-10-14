@@ -1,5 +1,5 @@
 <div>
-    {{-- Stop trying to control. --}}
+
 
     <div class="container col-md-6 offset-md-3 mt-3">
         <div class="card">

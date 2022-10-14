@@ -12,7 +12,7 @@
 
 <style>
   p{
-    justify-content: center  
+    justify-content: center ; 
   }
 </style>
 @endsection

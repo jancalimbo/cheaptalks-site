@@ -6,11 +6,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                
                 @if(auth()->guest())
-                {{-- <li class="nav-item">
-                    <a id="navbar-links" class="nav-link" href="{{url('/login')}}">Login</a>
-                </li> --}}
+
                 @else
                     
                 <li class="nav-item">
@@ -50,7 +47,6 @@
 #navbar-links{
     color: #BAFF29;
     font-family: 'Raleway', sans-serif;
-    /* font-size: 20px; */
     font-weight: bold;
 }
 

@@ -6,13 +6,13 @@
    
 
     <div class="container d-flex">
-        <div class="row">
-            <button type="button" class="collapsible">Create Post</button>
-        <div class="content">
-            <div id="" class="col sm-1 mb-4">
-                <livewire:posts.create/>
+        <div class="row d-flex flex-row-reverse">
+            <button id="create-post-collapsible" type="button" class="mt-4 text-center collapsible">Create Post </button>
+            <div id="livewire-create-1" class="content">
+                <div id="livewire-create" class="d-flex justify-content-center col sm-1 mb-4">
+                    <livewire:posts.create/>
+                </div>
             </div>
-        </div>
             
             <div id="right-side" class="col sm-1 mb-4">
                 @if(session('message'))
@@ -47,9 +47,6 @@
     }
     #top-title{
         margin-top: 30px;
-        /* font-family: 'Lavishly Yours', cursive; */
-        /* font-weight: bold; */
-        /* font-siz e: 30px; */
     }
     body{
         background-color: rgb(251, 234, 251);
@@ -65,12 +62,22 @@
         
     }
 
-    #pen {
-        color: rgb(140, 50, 140)
-    }
-
     .left-please-uwu{
         margin-left: 60px;
+    }
+
+    #create-post-collapsible{
+        background-color: #1A1B41;
+        color: white;
+        border-radius: 10px;
+        max-width: 8vw;
+    }
+
+    #livewire-create{
+        background-color: rgba(141, 10, 10, 0);
+    }
+    #livewire-create-1{
+        background-color: rgba(67, 11, 11, 0);
     }
 
     /* #right-side{
@@ -103,8 +110,8 @@
     overflow: hidden;
     background-color: #f1f1f1;
     }
-    Step 3) Add JavaScript:
-    Example
+    /* Step 3) Add JavaScript:
+    Example */
     var coll = document.getElementsByClassName("collapsible");
     var i;
 
