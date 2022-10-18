@@ -3,7 +3,7 @@
         <div class="w-25 container">
             <div class="row">
                 <select name="" id="filter" class="form-select" wire:model.lazy="category">
-                    <option value="all" hidden="true">All Categories</option>
+                    <option value="all">All Categories</option>
                     <option value="Adventure">Adventure</option>
                     <option value="Supernatural">Supernatural</option>
                     <option value="Entertainment">Entertainment</option>
@@ -20,7 +20,7 @@
     <div class="d-flex justify-content-between flex-wrap">
         
         @foreach ($posts as $post)
-        <div id="post-box-main" class="card align-self-stretch m-1" style="width: 49%">
+        <div class="card align-self-stretch m-1 post-box-main" style="width: 49%">
             <div class="card-body" id="post-box">
                 <div class="card-title">
                     <h4>{{ $post->title }}, <span id="category-span">{{ $post->category }}</span></h4>
@@ -68,7 +68,7 @@
             font-weight: bold;
         }
         
-        #post-box-main{
+        .post-box-main{
             border-radius: 10px; 
             background-color: rgba(255, 255, 255, 0);
         }

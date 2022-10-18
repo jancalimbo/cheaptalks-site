@@ -7,9 +7,10 @@
 
     <div class="container d-flex">
         <div class="row d-flex flex-row-reverse">
+            
             <button id="create-post-collapsible" type="button" class="mt-4 text-center collapsible">Create Post </button>
             <div id="livewire-create-1" class="content">
-                <div id="livewire-create" class="d-flex justify-content-center col sm-1 mb-4">
+                <div id="livewire-create" class="d-flex justify-content-center">
                     <livewire:posts.create/>
                 </div>
             </div>

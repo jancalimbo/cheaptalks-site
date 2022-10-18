@@ -26,6 +26,17 @@ class Index extends Component
         $posts = $query->paginate(6);
         return compact('posts');
     }
+    // public function showAllPosts(){
+    //     $query = Post::where('user_id', auth()->user()->id)
+    //     ->orderBy('created_at','DESC')
+    //     ->search($this->search);
+    //     if($this->category != 'all'){
+    //         $query->where('category',$this->category);
+    //     }
+
+    //     $posts = $query->paginate(6);
+    //     return compact('posts');
+    // }
     
     public function render()
     {

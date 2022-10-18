@@ -2,9 +2,6 @@
 @section('content')
 @livewireScripts
 
-<div class="col">
-    <input type="text" class="form-control" placeholder="Search" wire:model="search2">   
-</div>
 
 <div class="d-flex">
     <div>
@@ -19,7 +16,7 @@
         <div id="post-box" class="card align-self-stretch m-1" style="width: 31%">
             <div class="card-body">
                 <div class="card-title">
-                    <h4 id="post-title">{{ $post->title }}</h4>
+                    <h4 id="post-title">{{ $post->title }} <span><h6>{{ $post->category }}</h6></span> </h4>
                     <p class="timestamp"><b>by: </b> {{ $post->user->lname }}, {{ $post->user->fname }} <br>
                    <b>created: </b>{{ $post->created_at->format('F d, Y g:i A') }}</p> <br>
                     <p>{{ $post->content }}</p>
