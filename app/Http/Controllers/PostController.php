@@ -49,26 +49,32 @@ class PostController extends Controller
     public function index(){
         return view('posts.my-posts');
     }
-
+    
     public function edit($id)
     {
         // return view('posts.edit',['post'=>$post]);
         return view('posts.edit',compact('id'));
     }
-
+    
     public function destroy($id){
         return view('posts.delete',compact('id'));
     }
-
-
-
+    
+    public function show(){
+        return view('posts.test');
+    }
+    
 
     //end of crud video
 
-    public function show(Post $post)
-    {
-        return view('posts.view',['post'=>$post]);
-    }
+    // public function show($id)
+    // {
+    //     return view('posts.view',compact('id'));
+    // }
+    // public function show(Post $post)
+    // {
+    //     return view('posts.view',['post'=>$post]);
+    // }
 
 
   

@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
             [
                 'lname' => 'Salvatore',
                 'fname' => 'Stefan',
-                'username' => 'iamthegoodbrother',
+                'username' => 'th3goodbr0ther',
                 'password' => bcrypt('thisisapassword'),
                 'email' => 'stefan_s@yahoo.com',
                 'email_verified_at' => Carbon::now()
@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
             [
                 'lname' => 'Hargreeves',
                 'fname' => 'Vanya',
-                'username' => 'iamextraordinary',
+                'username' => 'extraordinary_viktor07',
                 'password' => bcrypt('thisisapassword'),
                 'email' => 'hargreevesvanya@yahoo.com',
                 'email_verified_at' => Carbon::now()

@@ -39,13 +39,13 @@
 
     <style>
         .card{
-            border: 3px solid #1A1B41; 
+            /* border: 3px solid #1A1B41; 
             background-color: #1a1b41b6;
-            margin-top: 20vh; 
+            margin-top: 20vh;  */
         }
 
         h3{
-            color: #BAFF29;
+            /* color: #BAFF29; */
         }
     </style>
 </div>

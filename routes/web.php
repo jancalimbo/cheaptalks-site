@@ -38,6 +38,16 @@ Route::group(['middleware'=> ['auth', 'verified']],function(){
     Route::get('/edit/{post}', [PostController::class, 'edit']);
     Route::get('/delete/{post}', [PostController::class, 'destroy']);
     Route::get('/posts/recent-posts',[PostController::class,'recentPosts']);
+    Route::get('/posts/recent-posts/view/{post}',[PostController::class,'show']);
     //routes for logs
     Route::get('/logs',[SiteController::class, 'logs']);
 });
+
+
+
+
+
+
+
+
+

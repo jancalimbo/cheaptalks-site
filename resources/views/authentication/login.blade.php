@@ -49,8 +49,8 @@
 <style>
 
     #login-box{
-        background-color: #1A1B41;
-        color: white;
+        /* background-color: #1A1B41;
+        color: white; */
         /* margin-top: 80px; */
     }
 
@@ -63,7 +63,7 @@
 }
 
 .btn{
-    background-color: #353894;
+    /* background-color: #353894; */
     
 }
 
@@ -72,7 +72,7 @@
 }
 
 #register-link{
-  color: #BAFF29;
+  /* color: #BAFF29; */
 }
 input{
 

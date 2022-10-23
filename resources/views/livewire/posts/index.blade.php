@@ -4,10 +4,10 @@
             <div class="row">
                 <select name="" id="filter" class="form-select" wire:model.lazy="category">
                     <option value="all">All Categories</option>
-                    <option value="Adventure">Adventure</option>
+                    <option value="Fiction">Fiction</option>
                     <option value="Supernatural">Supernatural</option>
-                    <option value="Entertainment">Entertainment</option>
-                    <option value="Slice Life">Slice of Life</option>
+                    <option value="Love">Love</option>
+                    <option value="Life">Slice of Life</option>
                 </select>
             </div>
         </div> 
@@ -20,7 +20,7 @@
     <div class="d-flex justify-content-between flex-wrap">
         
         @foreach ($posts as $post)
-        <div class="card align-self-stretch m-1 post-box-main" style="width: 49%">
+        <div class="card align-self-stretch m-1 post-box-main" style="">
             <div class="card-body" id="post-box">
                 <div class="card-title">
                     <h4>{{ $post->title }}, <span id="category-span">{{ $post->category }}</span></h4>
@@ -32,6 +32,7 @@
              
                 <a href="{{ url('edit', ['post' => $post->id]) }}"><i class="fa-regular fa-pen-to-square"></i></a>
                 <a href="{{ url('delete', ['post' => $post->id]) }}" ><i class="fa-solid fa-trash"></i></a>
+                <a href="{{ url('show', ['post' => $post->id]) }}" >show</a>
             </div>
         </div>
         @endforeach
@@ -42,8 +43,8 @@
 
     <style>
         #post-box{
-            background-color: #202382;
-            color: white;
+            /* background-color: #202382;
+            color: white; */
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
         }
@@ -55,11 +56,11 @@
 
         
         .card-footer{
-            background-color: #1A1B41;
-            color: white;
+            /* background-color: #1A1B41;
+            color: white; */
         }
         a{
-            color: #BAFF29;
+            /* color: #BAFF29; */
             margin-right: 8px;
         }
         
@@ -70,7 +71,7 @@
         
         .post-box-main{
             border-radius: 10px; 
-            background-color: rgba(255, 255, 255, 0);
+            /* background-color: rgba(255, 255, 255, 0); */
         }
 
         #search{

@@ -16,10 +16,10 @@
                 <div class="form-floating mb-3">
                     <select name="category" class="form-select" id="" wire:model.defer="category">
                         
-                        <option value="Adventure">Adventure</option>
+                        <option value="Fiction">Fiction</option>
                         <option value="Supernatural">Supernatural</option>
-                        <option value="Entertainment">Entertainment</option>
-                        <option value="Slice Life">Slice of Life</option>
+                        <option value="Love">Love</option>
+                        <option value="Life">Life</option>
                       </select>
                     @error('category')
                         <p class="text-danger">{{ $message }}</p>
@@ -33,7 +33,7 @@
                     @enderror
                 </div>
                 <div class="form-group mb-3 d-grid gap-2 d-md-flex justify-content-end">
-                    <button id="save-btn" class="btn" type="submit" wire:click="editPost()">Save changes</button>
+                    <button id="save-btn" class="btn bg-success" type="submit" wire:click="editPost()">Save changes</button>
                 </div>
             </div>
         </div>
@@ -42,18 +42,18 @@
     <style>
         #edit-card{
             margin-top: 50px;
-            background-color: #202382;
+            /* background-color: #202382; */
         }
 
         #card-header{
-            background-color: #1A1B41;
-            color: #BAFF29;
+            /* background-color: #1A1B41;
+            color: #BAFF29; */
         }
 
         #save-btn{
             margin-top: 10px;
-            background-color: #1A1B41;
-            color: white
+            /* background-color: #1A1B41;
+            color: white */
         }
     </style>
 

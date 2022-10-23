@@ -73,16 +73,16 @@
   }
 
   #register-box{
-    background-color: #1A1B41;
-    color: white;
+    /* background-color: #1A1B41;
+    color: white; */
   }
 
   #sign-in-link{
-  color: #BAFF29;
+  /* color: #BAFF29; */
 }
 
 .btn{
-  background-color: #353894;
+  /* background-color: #353894; */
 }
 
 </style>

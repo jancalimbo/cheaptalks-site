@@ -17,7 +17,7 @@
                 <a id="navbar-links" class="nav-link" href="{{url('/posts/my-posts')}}">Posts</a>
                 </li>
                 <li class="nav-item">
-                    <a id="navbar-links" class="nav-link" href="{{url('/posts/recent-posts')}}">User Feed</a>
+                    <a id="navbar-links" class="nav-link" href="{{url('/posts/recent-posts')}}">News Feed</a>
                 </li>
                 <li class="nav-item">
                     <a id="navbar-links" class="nav-link" href="{{url('/logs')}}">Activity Log</a>

@@ -16,10 +16,10 @@
               <select name="category" class="form-select" id="" wire:model.defer="category">
                 <option value="" hidden="true">Select Category</option>
                 <option value="" selected disabled>Select Category</option>
-                <option value="Adventure">Adventure</option>
+                <option value="Fiction">Fiction</option>
                 <option value="Supernatural">Supernatural</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Slice Life">Slice of Life</option>
+                <option value="Romance">Romance</option>
+                <option value="Life">Life</option>
               </select>
               <label for="category">Category</label>
               @error('category')
@@ -43,22 +43,22 @@
     
     <style>
         #create-post-box{
-            background-color: #202382;
-            color: #1A1B41;
+            /* background-color: #202382;
+            color: #1A1B41; */
         }
 
         .card-header{
-            background-color: #1A1B41;
-            color: #BAFF29;
+            /* background-color: #1A1B41;
+            color: #BAFF29; */
         }
         a{
-            color: #BAFF29;
-            margin-right: 8px;
+            /* color: #BAFF29;
+            margin-right: 8px; */
         }
 
         .btn{
-            background-color: #1A1B41;
-            color: #BAFF29;
+            /* background-color: #1A1B41;
+            color: #BAFF29; */
         }
 
         .card{

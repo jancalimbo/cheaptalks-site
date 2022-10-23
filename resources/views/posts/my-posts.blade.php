@@ -50,7 +50,7 @@
         margin-top: 30px;
     }
     body{
-        background-color: rgb(251, 234, 251);
+        /* background-color: rgb(251, 234, 251); */
     }
 
     h4, p{
@@ -68,8 +68,8 @@
     }
 
     #create-post-collapsible{
-        background-color: #1A1B41;
-        color: white;
+        /* background-color: #1A1B41;
+        color: white; */
         border-radius: 10px;
         max-width: 8vw;
     }

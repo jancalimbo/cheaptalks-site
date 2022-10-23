@@ -9,7 +9,7 @@
 
     <style>
          body{
-        background-color: rgb(251, 234, 251);
+        /* background-color: rgb(251, 234, 251); */
     }
 
     #top{
