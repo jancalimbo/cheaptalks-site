@@ -41,8 +41,8 @@ Route::group(['middleware'=> ['auth', 'verified']],function(){
     Route::get('/posts/recent-posts/view/{post}',[PostController::class,'show']);
     //routes for logs
     Route::get('/logs',[SiteController::class, 'logs']);
-});
 
+});
 
 
 

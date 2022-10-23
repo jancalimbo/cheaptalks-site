@@ -3,35 +3,32 @@
 @livewireScripts
 
 
-<div class="d-flex">
+<div class="d-flex align-items-center">
     <div>
-        <h1 id="top">All posts</h1>
+        <h1 class="mt-2">All posts</h1>
+        
     </div>
-  
 </div>
 <hr>
 <div class="d-flex justify-content-center flex-wrap">
     
     @foreach ($recentPost as $post)
         <div id="post-box" class="card align-self-stretch m-1
-            {{ ($post->category === 'Love')? 'border-danger': ''}}
-            {{ ($post->category === 'Supernatural')? 'border-secondary': ''}}
-            {{ ($post->category === 'Fiction')? 'border-warning': ''}}
-            {{ ($post->category === 'Life')? 'border-success': ''}}
+            {{-- {{ ($user->gender === 'Female')? 'border-danger': ''}} --}}
+            {{ ($post->user->gender === 'Female')? 'border-danger': ''}}
+            {{ ($post->user->gender === 'Male')? 'border-primary': ''}}
         " style="width: 50%">
             <div class="card-body">
                 <div class="card-title">
-                    <h4 id="post-title">{{ $post->title }} <span><h6><span>@</span>{{ $post->user->username }}</h6></span></h4>
-                    <p class="timestamp"><br>
-                   <b></b>{{ $post->created_at->format('F d, Y g:i A') }}</p> <br>
+                    <h4 id="post-title">{{ $post->title }} <a href=""><span><h6><span>@</span>{{ $post->user->username }}</h6></span></a></h4>
+                    <p class="timestamp">
+                   {{ $post->created_at->format('F d, Y g:i A') }}</p> <br>
                     <p>{{ $post->content }}</p>
                 </div>
             </div>
             <div class="card-footer d-flex
-                {{ ($post->category === 'Love')? 'bg-danger': ''}}
-                {{ ($post->category === 'Supernatural')? 'bg-secondary': ''}}
-                {{ ($post->category === 'Fiction')? 'bg-warning': ''}}
-                {{ ($post->category === 'Life')? 'bg-success': ''}}
+                {{ ($post->user->gender === 'Female')? 'bg-danger': ''}}
+                {{ ($post->user->gender === 'Male')? 'bg-primary': ''}}
                 ">
                 @if($post->isEditable())
                     {{-- ipauna --}}
@@ -62,7 +59,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
     
     #top{
-        margin-top: 30px;
+        /* margin-top: 30px; */
         /* margin-bottom: 30px; */
         /* font-family: 'Tangerine', cursive; */
         /* font-family: 'Lavishly Yours', cursive; */
@@ -71,12 +68,12 @@
 
 
     #post-title{
-        font-family: 'Raleway', sans-serif;
+        /* font-family: 'Raleway', sans-serif; */
         font-weight: bold;
     }
     
     p{
-        font-family: 'Raleway', sans-serif;
+        /* font-family: 'Raleway', sans-serif; */
         font-weight: bold;
     }
     .timestamp{
@@ -84,7 +81,7 @@
     }
 
     .card-body{
-        /* background-color: #F1FFE7; */
+        /* background-color: #33475687; */
         /* color: #1A1B41; */
     }
     

@@ -1,13 +1,13 @@
-<div>
+<div class="">
     <div class="col d-flex justify-content-center">
         <div class="w-25 container">
             <div class="row">
-                <select name="" id="filter" class="form-select" wire:model.lazy="category">
+                <select name="" id="filter" class="form-select" wire:model.lazy="category_id">
                     <option value="all">All Categories</option>
-                    <option value="Fiction">Fiction</option>
-                    <option value="Supernatural">Supernatural</option>
-                    <option value="Love">Love</option>
-                    <option value="Life">Slice of Life</option>
+                    @foreach(App\Models\Category::get() as $category)
+                        <option value="{{$category->id}}">{{$category->category}}</option>
+                    @endforeach
+                    
                 </select>
             </div>
         </div> 
@@ -17,13 +17,13 @@
     </div>
     <hr>
 
-    <div class="d-flex justify-content-between flex-wrap">
+    <div class="justify-content-center d-flex flex-wrap">
         
         @foreach ($posts as $post)
-        <div class="card align-self-stretch m-1 post-box-main" style="">
+        <div class="card m-1" style="">
             <div class="card-body" id="post-box">
                 <div class="card-title">
-                    <h4>{{ $post->title }}, <span id="category-span">{{ $post->category }}</span></h4>
+                    <h4>{{ $post->title }}</h4><span>{{ $post->category->category }}</span>
                     <p id="timestamp"> {{ $post->created_at->format('F d, Y g:i A') }}</p> <br>
                     <p>{{ $post->content }}</p>
                 </div>
@@ -61,12 +61,12 @@
         }
         a{
             /* color: #BAFF29; */
-            margin-right: 8px;
+            /* margin-right: 8px; */
         }
         
         #category-span{
-            font-size: 18px;
-            font-weight: bold;
+            /* font-size: 18px;
+            font-weight: bold; */
         }
         
         .post-box-main{

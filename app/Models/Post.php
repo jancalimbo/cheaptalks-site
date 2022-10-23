@@ -25,7 +25,7 @@ class Post extends Model
 
     }
 
-    protected $fillable = ['user_id', 'title','content', 'category'];
+    protected $fillable = ['user_id', 'title','content', 'category_id'];
 
 
     protected $casts = [
@@ -36,6 +36,11 @@ class Post extends Model
         return $this->belongsTo('App\Models\User');
 
     }
+
+    public function category() {
+        return $this->belongsTo('App\Models\Category');
+    }
+
     public function isEditable()
     {
      return auth()->user()->role == 'editor' || auth()->user()->id == $this->user_id;

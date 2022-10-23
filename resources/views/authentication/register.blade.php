@@ -3,6 +3,7 @@
 @section('content')
 
 <div id="register-box" class="container col-md-6 offset-md-3 card mt-5">
+
   <h1 class="text-center">Register </h1>
 
   <form action="{{ '/register' }}" method="POST">
@@ -26,8 +27,23 @@
     <label for="username">Username</label>
     <input type="username" name="username" id="username" class="form-control">
     @error('username')
+    <p class="text-danger">{{ $message }}</p>
+    @enderror
+  </div>
+  
+  {{-- <label for="gender">Gender</label> --}}
+  <div class="form-floating mb-3">
+    <label for="gender">Gender</label>
+    <select name="gender" class="form-select" id="" wire:model.defer="gender">
+      <option value="" hidden="true">Choose</option>
+      <option value="" selected disabled>Choose</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+    @error('gender')
       <p class="text-danger">{{ $message }}</p>
     @enderror
+
   </div>
   <div class="form-group">
     <label for="email">Email</label>
@@ -59,6 +75,9 @@
     <button class="btn btn-primary px-5" type="submit">Sign up</button>
   </div>
   </form>
+</div>
+  
+ 
 </div>
 
 

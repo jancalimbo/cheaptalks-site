@@ -38,14 +38,14 @@
     height: 80px;
     padding-left: 20px; 
     padding-right: 20px; 
-    background-color: #1A1B41;
+    background-color: #082032;
 }
 .navbar-brand{
     font-size: 30px;
 }
 
 #navbar-links{
-    color: #BAFF29;
+    color: #FF4C29;
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
 }

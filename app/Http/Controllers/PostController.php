@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -31,13 +32,13 @@ class PostController extends Controller
         $request->validate([
             'title'=>'string|required',
             'content' => 'string|required',
-            'category' => 'string|required'
+            'category_id' => 'string|required'
         ]);
         $post = Post::create([
             'user_id' => auth()->user()->id,
             'title'=> $request->title,
             'content'=> $request->content,
-            'category'=> $request->category,
+            'category_id'=> $request->category_id,
         ]);
 
         return redirect('/posts/' . $post->id)->with('Info','New post created');
@@ -60,10 +61,7 @@ class PostController extends Controller
         return view('posts.delete',compact('id'));
     }
     
-    public function show(){
-        return view('posts.test');
-    }
-    
+ 
 
     //end of crud video
 
@@ -97,4 +95,5 @@ class PostController extends Controller
 
         return view('posts.recent',['recentPost' => $recentPost]);
     }
+
 }

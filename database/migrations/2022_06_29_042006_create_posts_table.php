@@ -15,11 +15,14 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id')->unsigned();
-            $table->mediumText('title');
-            $table->mediumText('category');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('category_id');
+            $table->mediumText('title');//wani apil
             $table->string('content');
             $table->timestamps();
+            
+            $table->foreign('user_id')->references('id')->on('users')->onDelete("CASCADE");
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete("CASCADE");
         });
     }
 

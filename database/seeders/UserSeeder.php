@@ -21,21 +21,24 @@ class UserSeeder extends Seeder
                 'lname' => 'Salvatore',
                 'fname' => 'Damon',
                 'username' => 'igotelena',
+                'gender' => 'Male',
                 'password' => bcrypt('thisisapassword'),
                 'email' => 'damon_s@gmail.com',
                 'email_verified_at' => Carbon::now()
             ],
             [
-                'lname' => 'Salvatore',
-                'fname' => 'Stefan',
-                'username' => 'th3goodbr0ther',
+                'lname' => 'Calimbo',
+                'fname' => 'Jan',
+                'gender' => 'Female',
+                'username' => 'alwaystilted',
                 'password' => bcrypt('thisisapassword'),
-                'email' => 'stefan_s@yahoo.com',
+                'email' => 'msjancalimbo@yahoo.com',
                 'email_verified_at' => Carbon::now()
             ],
             [
                 'lname' => 'Hargreeves',
                 'fname' => 'Vanya',
+                'gender' => 'Female',
                 'username' => 'extraordinary_viktor07',
                 'password' => bcrypt('thisisapassword'),
                 'email' => 'hargreevesvanya@yahoo.com',
