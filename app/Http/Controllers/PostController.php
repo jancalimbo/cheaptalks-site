@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -96,4 +97,9 @@ class PostController extends Controller
         return view('posts.recent',['recentPost' => $recentPost]);
     }
 
+    public function byAuthor(User $author)
+    {
+        $posts = Post::where('user_id', $author->id)->orderBy('created_at', 'desc')->simplePaginate(9);
+        return view('author', compact('posts', 'author'));
+    }
 }

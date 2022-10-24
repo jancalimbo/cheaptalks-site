@@ -54,4 +54,10 @@ class User extends Authenticatable
     public function logs(){
         return $this->hasMany(Log::class);   
     }
+
+    public static function byCategory($category_id){
+        return User::whereHas('posts', function ($query) use($category_id){
+            $query->where('category_id', $category_id);
+        })->orderBy('username')->get();
+    }
 }

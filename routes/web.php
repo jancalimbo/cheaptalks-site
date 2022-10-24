@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,8 +42,12 @@ Route::group(['middleware'=> ['auth', 'verified']],function(){
     Route::get('/posts/recent-posts/view/{post}',[PostController::class,'show']);
     //routes for logs
     Route::get('/logs',[SiteController::class, 'logs']);
-
+    
 });
+
+Route::get('/authors',  [UserController::class, 'index']);
+Route::get('/authors/{author}',  [PostController::class, 'byAuthor']);
+
 
 
 

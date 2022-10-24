@@ -14,13 +14,16 @@
                     <a id="navbar-links" class="nav-link" href="{{url('/dashboard')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                <a id="navbar-links" class="nav-link" href="{{url('/posts/my-posts')}}">Posts</a>
-                </li>
-                <li class="nav-item">
                     <a id="navbar-links" class="nav-link" href="{{url('/posts/recent-posts')}}">News Feed</a>
                 </li>
                 <li class="nav-item">
-                    <a id="navbar-links" class="nav-link" href="{{url('/logs')}}">Activity Log</a>
+                    <a id="navbar-links" class="nav-link" href="{{url('/authors')}}">Discover Users</a>
+                </li>
+                <li class="nav-item">
+                <a id="navbar-links" class="nav-link" href="{{url('/posts/my-posts')}}">{{Auth::user()->fname}}</a>
+                </li>
+                <li class="nav-item">
+                    <a id="navbar-links" class="nav-link" href="{{url('/logs')}}">Activity</a>
                 </li>
                 <li class="nav-item">
                     <a id="navbar-links" class="nav-link" href="{{url('/logout')}}">Logout &nbsp; <i class="fa-solid fa-right-to-bracket"></i></a>

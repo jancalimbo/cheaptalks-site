@@ -20,7 +20,7 @@
         " style="width: 50%">
             <div class="card-body">
                 <div class="card-title">
-                    <h4 id="post-title">{{ $post->title }} <a href=""><span><h6><span>@</span>{{ $post->user->username }}</h6></span></a></h4>
+                    <h4 id="post-title">{{ $post->title }} <a href="{{url('authors', ['id'=>$post->user->id])}}"><span><h6><span>@</span>{{ $post->user->username }}</h6></span></a></h4>
                     <p class="timestamp">
                    {{ $post->created_at->format('F d, Y g:i A') }}</p> <br>
                     <p>{{ $post->content }}</p>
@@ -31,18 +31,11 @@
                 {{ ($post->user->gender === 'Male')? 'bg-primary': ''}}
                 ">
                 @if($post->isEditable())
-                    {{-- ipauna --}}
-                    <div class="">
-                        <a class="buttons-for-user" href="" onclick="return false;"><i class="fa-regular fa-heart"></i></a>&nbsp;
-                        <a class="buttons-for-user" href="" onclick="return false;"><i class="fa-regular fa-comment-dots"></i></i></a>&nbsp;
-                        <a class="buttons-for-user" href="" onclick="return false;"><i class="fa-solid fa-share-nodes"></i></a>
-                    </div>
-                    {{-- ibiutang kilid --}}
                     <div class="">
                         <a class="buttons-for-user" href="{{ url('edit', ['post' => $post->id]) }}"><i class="fa-regular fa-pen-to-square"></i></a>
                         <a class="buttons-for-user" href="{{ url('delete', ['post' => $post->id]) }}" ><i class="fa-solid fa-trash"></i></a>
                     </div>
-                    @else 
+                @else 
                     <a class="buttons-for-non-user" href="" onclick="return false;"><i class="fa-regular fa-heart"></i></a>&nbsp;
                     <a class="buttons-for-non-user" href="" onclick="return false;"><i class="fa-regular fa-comment-dots"></i></i></a>&nbsp;
                     <a class="buttons-for-non-user" href="" onclick="return false;"><i class="fa-solid fa-share-nodes"></i></a>                    

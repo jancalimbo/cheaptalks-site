@@ -32,7 +32,6 @@
              
                 <a href="{{ url('edit', ['post' => $post->id]) }}"><i class="fa-regular fa-pen-to-square"></i></a>
                 <a href="{{ url('delete', ['post' => $post->id]) }}" ><i class="fa-solid fa-trash"></i></a>
-                <a href="{{ url('show', ['post' => $post->id]) }}" >show</a>
             </div>
         </div>
         @endforeach
