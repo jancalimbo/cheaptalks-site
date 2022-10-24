@@ -14,13 +14,12 @@
                     @enderror
                 </div>
                 <div class="form-floating mb-3">
-                    <select name="category" class="form-select" id="" wire:model.defer="category">
-                        {{-- <option value="Fiction">Fiction</option>
-                        <option value="Supernatural">Supernatural</option>
-                        <option value="Love">Love</option>
-                        <option value="Life">Life</option> --}}
-                      </select>
-                    @error('category')
+                    <select name="category_id" class="form-select" id="" wire:model.defer="category_id">
+                        @foreach(App\Models\Category::get() as $category)
+                        <option value="{{$category->id}}">{{$category->category}}</option>
+                        @endforeach
+                    </select>
+                    @error('category_id')
                         <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
