@@ -1,4 +1,4 @@
-<h1>Welcome to Twikker, {{ $user->fname }}!</h1>
+<h1>Welcome to CheapTalk, {{ $user->fname }}!</h1>
 <h3>Feel free to share with us what's on your mind.</h3>
 
 <br>

@@ -1,34 +1,14 @@
 <div>
 
 
-    <div class="container col-md-6 offset-md-3 mt-3">
-        <div class="card">
-            <div class="card-header">
+    <div class="container col-md-6 offset-md-3 delete-card">
+        <div class="card card-delete">
+            <div class="card-body card-body-delete">
                 <h3 class="text-center">Are you sure you want to delete this post?</h3>
             </div>
 
-            {{-- <div class="card-body">
-                <table class="table">
-                    <tr>
-                        <th>
-                            Title
-                        </th>
-                        <td>
-                            {{ $this->post->title }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            Content
-                        </th>
-                        <td>
-                            {{ $this->post->content }}
-                        </td>
-                    </tr>
-                </table>
-            </div> --}}
-
-            <div class="card-footer">
+           
+            <div class="card-footer card-footer-delete">
                 <div class="d-flex justify-content-end">
                     <button class="btn btn-danger" wire:click="deletePost()">Delete</button>
                     <button class="btn btn-secondary mx-3" wire:click="backToPosts()">Back</button>
@@ -38,12 +18,20 @@
     </div>
 
     <style>
-        .card{
-            /* border: 3px solid #1A1B41; 
-            background-color: #1a1b41b6;
-            margin-top: 20vh;  */
+        .delete-card{
+            margin-top: 10em;
+           
         }
 
+        .card-delete{
+            border: #082032 2px solid;
+            border-radius: 10px;
+        }
+
+
+        .card-footer-delete{
+            background-color: #082032;
+        }
         h3{
             /* color: #BAFF29; */
         }

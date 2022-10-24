@@ -3,7 +3,7 @@
 @section('content')
 
 <br>
-<h1>Welcome to Twikker!</h1>
+<h1>Welcome to CheapTalk!</h1>
 <h5>
   Share your feelings to the world.
 </h5>

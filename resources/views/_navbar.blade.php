@@ -1,6 +1,6 @@
 <nav id="navbar-box" class="navbar navbar-expand-lg ">
     <div class="container-fluid">
-        <h1><a id="navbar-links" class="navbar-brand" href="{{url('/')}}">Twikker</a></h1>
+        <h1><a id="navbar-link-title" class="navbar-brand" href="{{url('/')}}">CheapTalks</a></h1>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -20,7 +20,8 @@
                     <a id="navbar-links" class="nav-link" href="{{url('/authors')}}">Discover Users</a>
                 </li>
                 <li class="nav-item">
-                <a id="navbar-links" class="nav-link" href="{{url('/posts/my-posts')}}">{{Auth::user()->fname}}</a>
+                   <a id="navbar-links" class="nav-link" href="{{url('/posts/my-posts')}}">{{Auth::user()->fname}}</a>
+                   
                 </li>
                 <li class="nav-item">
                     <a id="navbar-links" class="nav-link" href="{{url('/logs')}}">Activity</a>
@@ -47,14 +48,22 @@
     font-size: 30px;
 }
 
-#navbar-links{
+a.nav-link:link{
+    
+    font-weight: bold;
+}
+#navbar-link-title{
     color: #FF4C29;
-    font-family: 'Raleway', sans-serif;
+    
+    font-weight: bold;
+}
+a.nav-link:hover{
+    color: #FF4C29;
+    
     font-weight: bold;
 }
 
 .nav-link{
     margin-left: 25px;
 }
-    
 </style>

@@ -33,13 +33,13 @@
   
   {{-- <label for="gender">Gender</label> --}}
   <div class="form-floating mb-3">
-    <label for="gender">Gender</label>
     <select name="gender" class="form-select" id="" wire:model.defer="gender">
       <option value="" hidden="true">Choose</option>
       <option value="" selected disabled>Choose</option>
       <option value="Male">Male</option>
       <option value="Female">Female</option>
     </select>
+    <label for="gender">Gender</label>
     @error('gender')
       <p class="text-danger">{{ $message }}</p>
     @enderror

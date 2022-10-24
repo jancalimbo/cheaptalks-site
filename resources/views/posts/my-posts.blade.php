@@ -5,7 +5,7 @@
 
    
 
-    <div class="container d-flex">
+    <div class="container">
         <div class="row d-flex flex-row-reverse">
             
             <button id="create-post-collapsible" type="button" class="mt-4 text-center collapsible">Create Post </button>
@@ -36,8 +36,8 @@
     </script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+        /* @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap'); */
 
         .btn {
        
@@ -54,8 +54,8 @@
     }
 
     h4, p{
-        font-family: 'Raleway', sans-serif;
-        font-weight: bold;
+        /* font-family: 'Raleway', sans-serif; */
+        /* font-weight: bold; */
     }
 
     #timestamp{

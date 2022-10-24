@@ -1,25 +1,25 @@
 @extends('base')
 
 @section('content')
-<div class="container mt-4">
-  <div class="">
-    <h3>{{  $author->fname }} {{  $author->lname }} <span>@<span>{{ $author->username }}</span></span> </h3>
+<div class="container mt-4 ">
+  <div class="mb-4">
+    <h3>{{  $author->fname }} {{  $author->lname }} </span></span> </h3>
+    <span class="username-title"><i><span>@<span>{{ $author->username }} </i></span>
 
   </div>
   
   <div class="row">
     @foreach ($posts as $post)
-    <div class="col-md-4 mt-1">
-        <div class="card mb-3">
-            <div class="card-header" style="height: 20vh;">
+    <div class=" col-md-4 mt-1 mb-3" style="">
+            <div class="card-body post-card-body {{$post->user->gender === 'Female'? 'female' : 'male'}}" style="height: 30vh;">
                 <div class="">
-                    <h4>{{$post->title}}</h4>
-                    <h6><span>@</span>{{$post->user->username}}, {{$post->category->category}}</h6>
-                    <h6>{{$post->content}}</h6>
+                    <h4 class="font-weight-bold">{{$post->title}} <span class="username"><span>@</span>{{$post->user->username}}</span></h4>
+                    <p class="font-weight-italic">{{$post->category->category}}</p> <br>
+                    <p>{{$post->content}}</p>
                 </div>
             </div>
             
-            <div class="card-footer {{$post->user->gender === 'Female'? 'f1' : 'm1'}}">
+            <div class="card-footer card-footer-user p-3 {{$post->user->gender === 'Female'? 'female2' : 'male2'}}">
               @if($post->isEditable())
               <div class="">
                   <a class="buttons-for-user" href="{{ url('edit', ['post' => $post->id]) }}"><i class="fa-regular fa-pen-to-square"></i></a>
@@ -31,25 +31,42 @@
               <a class="buttons-for-non-user" href="" onclick="return false;"><i class="fa-solid fa-share-nodes"></i></a>                    
               @endif
             </div>
-        </div>
     </div>
     @endforeach
 
-    {{-- <div class="col offset-md-5">
-        {{ $posts->links() }}
-    </div> --}}
   </div>
 </div>
 <style>
-  .f1{
-      background-color: lightpink; 
+  .female2{
+      background-color: hotpink; 
   }
-  .m1{
-      background-color: lightblue;
+  .male2{
+      background-color: dodgerblue;
+  }
+  .female{
+      border: hotpink 2px solid; 
+  }
+  .male{
+      border: dodgerblue 2px solid;
   }
 
   i{
     color: black
+  }
+  .post-card-body{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .card-footer-user{
+    border-radius: 10px;
+  }
+
+  .username{
+    font-size: 15px;
+  }
+  .username-title{
+    font-size: 20px;
   }
 </style>
 @endsection
