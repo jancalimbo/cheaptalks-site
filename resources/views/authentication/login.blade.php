@@ -62,7 +62,7 @@
     }
     #register-link{
       color: #FF4C29;
-      text-decoration: none;
+      /* text-decoration: none; */
       font-weight: bold;
     }
    
