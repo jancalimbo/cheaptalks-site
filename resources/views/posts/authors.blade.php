@@ -1,4 +1,4 @@
-@extends('base')
+@extends('components.base')
 
 @section('content')
 <div class="container">
@@ -6,7 +6,7 @@
     @foreach($users as $user)
     <div id="" class="col-md-4 mt-5">
 
-      <a href="{{url('authors', ['id'=>$user->id])}}">
+      <a class="link-to-author" href="{{url('authors', ['id'=>$user->id])}}">
         <div class="card users">
             <div class="card-header">
               <h4>{{$user->fname}} {{$user->lname}}</h4>
@@ -14,7 +14,7 @@
             </div>            
             
             <div class="card-footer users-bot {{$user->gender === 'Female'? 'f1' : 'm1' }}">
-                <p>{{$user->posts()->count()}} tweets</p>
+                <p>{{$user->posts()->count()}} posts</p>
             </div>
         </div>
       </a>
@@ -29,6 +29,9 @@
 
 
 <style>
+  .link-to-author:hover{
+    color: purple
+  }
   #pf1{
     height: 150px;
     width: 310px;
@@ -40,10 +43,10 @@
     border-radius: 10px;
   }
   .f1{
-      background-color: hotpink; 
+      background-color: pink; 
   }
   .m1{
-      background-color: dodgerblue; 
+      background-color: lightskyblue; 
   }
  
   a{

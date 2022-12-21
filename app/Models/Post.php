@@ -25,7 +25,7 @@ class Post extends Model
 
     }
 
-    protected $fillable = ['user_id', 'title','content', 'category_id'];
+    protected $fillable = ['user_id', 'title','content', 'category_id', 'status'];
 
 
     protected $casts = [
@@ -34,7 +34,6 @@ class Post extends Model
 
     public function user() {
         return $this->belongsTo('App\Models\User');
-
     }
 
     public function category() {

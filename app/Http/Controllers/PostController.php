@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use alert;
+use App\Models\Like;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 
 class PostController extends Controller
 {
@@ -40,6 +42,7 @@ class PostController extends Controller
             'title'=> $request->title,
             'content'=> $request->content,
             'category_id'=> $request->category_id,
+            'status'=> "show",
         ]);
 
         return redirect('/posts/' . $post->id)->with('Info','New post created');
@@ -62,18 +65,6 @@ class PostController extends Controller
         return view('posts.delete',compact('id'));
     }
     
- 
-
-    //end of crud video
-
-    // public function show($id)
-    // {
-    //     return view('posts.view',compact('id'));
-    // }
-    // public function show(Post $post)
-    // {
-    //     return view('posts.view',['post'=>$post]);
-    // }
 
 
   
@@ -92,14 +83,26 @@ class PostController extends Controller
     }
     public function recentPosts()
     {
-        $recentPost = Post::orderBy('created_at','DESC')->get();
+        $recentPost = Post::where('status', 'show')->orderBy('created_at','DESC')->get();
 
         return view('posts.recent',['recentPost' => $recentPost]);
     }
 
-    public function byAuthor(User $author)
+    public function byAuthor($id)
     {
-        $posts = Post::where('user_id', $author->id)->orderBy('created_at', 'desc')->simplePaginate(9);
-        return view('author', compact('posts', 'author'));
+        return view('posts.author', compact('id'));
+    }
+
+    public function likePost($id)
+    {
+        $post = Post::find($id);
+
+        Like::create([
+            'user_id' => auth()->user()->id,
+            'post_id' => $post->id,
+        ]);
+
+        dd(auth()->user()->id);
+        // return redirect('posts/recent-posts');
     }
 }

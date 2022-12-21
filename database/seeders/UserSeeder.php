@@ -16,15 +16,17 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        // these are admin users
         $users = [
             [
                 'lname' => 'Salvatore',
                 'fname' => 'Damon',
-                'username' => 'igotelena',
+                'username' => 'user',
                 'gender' => 'Male',
                 'password' => bcrypt('thisisapassword'),
                 'email' => 'damon_s@gmail.com',
-                'email_verified_at' => Carbon::now()
+                'email_verified_at' => Carbon::now(),
+                'role' => 'user',
             ],
             [
                 'lname' => 'Calimbo',
@@ -33,7 +35,8 @@ class UserSeeder extends Seeder
                 'username' => 'alwaystilted',
                 'password' => bcrypt('thisisapassword'),
                 'email' => 'msjancalimbo@yahoo.com',
-                'email_verified_at' => Carbon::now()
+                'email_verified_at' => Carbon::now(),
+                'role' => 'user',
             ],
             [
                 'lname' => 'Hargreeves',
@@ -42,13 +45,14 @@ class UserSeeder extends Seeder
                 'username' => 'extraordinary_viktor07',
                 'password' => bcrypt('thisisapassword'),
                 'email' => 'hargreevesvanya@yahoo.com',
-                'email_verified_at' => Carbon::now()
+                'email_verified_at' => Carbon::now(),
+                'role' => 'user',
             ],
 
         ];
 
         foreach($users as $user) {
-            User::create($user);
+            User::create($user)->assignRole('user');
         }
     }
 }

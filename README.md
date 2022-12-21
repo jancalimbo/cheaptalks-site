@@ -1,6 +1,6 @@
 ASSIGNMENT:
 
- <br>
+ <!-- <br> -->
 Create a new full CRUD Laravel 9 project with the use of the Laravel Livewire framework with the following requirements: <br>
 
 A registration page for registering new users . <br>

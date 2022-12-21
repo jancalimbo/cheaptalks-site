@@ -1,4 +1,4 @@
-@extends('base')
+@extends('components.base')
 @section('content')
 
    

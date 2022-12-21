@@ -13,17 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('likes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('category_id');
-            $table->mediumText('title');//wani apil
-            $table->string('content');
-            $table->string('status');
+            $table->unsignedBigInteger('post_id');
             $table->timestamps();
-            
-            $table->foreign('user_id')->references('id')->on('users')->onDelete("CASCADE");
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete("CASCADE");
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 
@@ -34,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('likes');
     }
 };

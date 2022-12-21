@@ -43,10 +43,11 @@ class AuthController extends Controller
             'lname' => $request->lname,
             'gender' => $request->gender,
             'username' => $request->username,
+            'status' => "authorized",
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'remember_token' => $token,
-        ]);
+        ])->assignRole('user');
 
         Mail::send('authentication.verification-mail', ['user' => $user], function ($mail) use($user){
             $mail->to($user->email);
@@ -79,6 +80,10 @@ class AuthController extends Controller
         if(!$user || $user->email_verified_at == null){
             return redirect('/')->with('error', 'Sorry, this account is not yet verified or does not exist.');
         }
+
+        if($user && $user->status== 'banned'){
+            return redirect('/')->with('error', 'This account is banned.');
+        }
         
         $login = auth()->attempt([
             'username' => $request->username,
@@ -86,9 +91,15 @@ class AuthController extends Controller
         ]);
 
         if(!$login) {
-            return back()->with('error','Invalid user credentials.');
+        return back()->with('error','Invalid user credentials.');
         }
-        return redirect('/dashboard');
+
+        if($user->role == 'admin'){
+            return redirect('/admin')->with('message', 'Hello, Admin!');
+
+        }elseif($user->role == 'user'){
+            return redirect('/dashboard');
+        }
         
     }
 
@@ -99,9 +110,4 @@ class AuthController extends Controller
         return redirect('/')->with('message', 'Logged out successfully.');
     }
 
-    //added functions
-    // if(auth()->guest()){
-    //     return redirect('/')->with('error', 'Please log in first.');
-    // }
-    
 }

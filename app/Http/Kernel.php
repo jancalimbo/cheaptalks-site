@@ -65,5 +65,10 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'owner'=> \App\Http\Middleware\PostOwnewMiddleware::class,
         'can-edit'=>\App\Http\Middleware\CanEditPostMiddleware::class,
+
+        //spatie
+        'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
+        'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
+        'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
     ];
 }

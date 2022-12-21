@@ -2,6 +2,5 @@
 
 @section('content')
 
-<livewire:posts.delete :postId="$id"/>
-
+<livewire:posts.by-author :authorId="$id"/>
 @endsection

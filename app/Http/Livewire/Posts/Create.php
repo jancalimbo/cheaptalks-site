@@ -31,6 +31,7 @@ class Create extends Component
             'title' => $this->title,
             'content' => $this->content,
             'category_id' => $this->category_id,
+            'status'=> "show",
         ]);
 
         $log_entry =  'Added a new post titled "' . $post->title . '"';

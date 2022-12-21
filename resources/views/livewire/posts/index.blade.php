@@ -29,6 +29,11 @@
                     <h4>{{ $post->title }}</h4><span>{{ $post->category->category }}</span>
                     <p id="timestamp"> {{ $post->created_at->format('F d, Y g:i A') }}</p> <br>
                     <p>{{ $post->content }}</p>
+                    @if ($post->status == 'taken down')
+                          <p class="text-danger" style="font-size: 10px; font-weight: bold">
+                            &lt;This post was taken down. Only you can view this&gt;
+                          </p>
+                    @endif
                 </div>
             </div>
             <div id="post-box-footer" class="card-footer card-footer-mypost">
