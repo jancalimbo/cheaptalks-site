@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ASSIGNMENT:
 
  <!-- <br> -->
@@ -9,3 +10,6 @@ After a successful registration process, the system must perform the following: 
     ->  Perform validation of a new account upon successful email verification. <br>
     ->  A login page that only allows login to validated accounts (that is accounts that have undergone the verification process). <br>
     ->  A full CRUD page where only logged-in users can access.
+=======
+You're one "php artisan migrate --seed" away!
+>>>>>>> 9253e869d5566db6efc35735f316a5dfbfbeaa50
